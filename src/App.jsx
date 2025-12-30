@@ -240,6 +240,9 @@ export default function App() {
           <button onClick={() => setAuthMode(authMode === 'login' ? 'signup' : 'login')}>{authMode === 'login' ? 'Need account?' : 'Have account?'}</button>
           <button onClick={() => { if (auth) signInAnonymously(auth); }}>Guest</button>
         </div>
+        <div className="mt-8 text-center text-sm text-slate-400 font-mono">
+          Created by Horace Chen using Vibe Coding in 2025.12.30
+        </div>
       </div>
     </div>
   );
@@ -370,10 +373,10 @@ export default function App() {
                   disabled={pSkillCD > 0}
                   onClick={() => setPendingSkill(!pendingSkill)}
                   className={`px-6 py-2 rounded-full text-xs font-bold border transition-all ${pendingSkill
-                      ? 'bg-yellow-500/20 text-yellow-500 border-yellow-500 animate-pulse'
-                      : pSkillCD > 0
-                        ? 'bg-slate-800 text-slate-600 border-slate-800 cursor-not-allowed'
-                        : 'bg-transparent text-slate-400 border-slate-600 hover:text-white hover:border-white'
+                    ? 'bg-yellow-500/20 text-yellow-500 border-yellow-500 animate-pulse'
+                    : pSkillCD > 0
+                      ? 'bg-slate-800 text-slate-600 border-slate-800 cursor-not-allowed'
+                      : 'bg-transparent text-slate-400 border-slate-600 hover:text-white hover:border-white'
                     }`}
                 >
                   {pSkillCD > 0 ? `Skill CD: ${pSkillCD}` : pendingSkill ? 'SKILL ACTIVE (Click to Cancel)' : `ACTIVATE SKILL: ${playerChar.skill.name}`}
